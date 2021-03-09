@@ -1,5 +1,5 @@
-PIL-Tools
-=========
+discord-better-help
+===================
 
 Release v\ |version|.
 
