@@ -34,9 +34,10 @@ Based off of `discord-pretty-help <https://pypi.org/project/discord-pretty-help/
 Overview
 --------
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
 
    reference/index.rst
+   changelogs/index.rst
 
 
 Installation

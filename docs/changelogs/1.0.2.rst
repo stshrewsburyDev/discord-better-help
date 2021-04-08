@@ -1,0 +1,8 @@
+Version 1.0.2
+-------------
+
+
+Bug Fixes:
+==========
+
+* Fixed a bug where having 2 or more aliases on a command wouldn't show the first alias in the list when `code_block` was enabled.

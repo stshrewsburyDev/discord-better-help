@@ -82,7 +82,7 @@ class Paginator:
 
         if command.aliases:
             page.add_field(name="Aliases:", inline=True,
-                           value=f"{self.prefix}{self._get_command_aliases(command)}{self.suffix}")
+                           value=f"{self.prefix}\n{self._get_command_aliases(command)}{self.suffix}")
 
         if command._buckets._cooldown:
             cooldown = command._buckets._cooldown
