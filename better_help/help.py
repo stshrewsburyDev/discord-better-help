@@ -37,6 +37,9 @@ class Help(HelpCommand):
         self.closed_message = options.pop("closed_message", "Menu closed.")
 
         self.show_cooldown = options.pop("show_cooldown", True)
+        self.show_brief = options.pop("show_brief", False)
+        self.show_info_title = options.pop("show_info_title", False)
+
         self.colour = options.pop("colour", discord.Embed.Empty)
         self.no_info = options.pop("no_info", "No information provided")
         self.ending_note = options.pop("ending_note", "")
@@ -194,7 +197,8 @@ class Help(HelpCommand):
     async def send_command_help(self, command: commands.Command):
         filtered = await self.filter_commands([command])
         if filtered:
-            self.paginator.add_command(command, self.get_command_signature(command), self.show_cooldown)
+            self.paginator.add_command(command, self.get_command_signature(command),
+                                       show_cooldown=self.show_cooldown, show_brief=self.show_brief, show_info_title=self.show_info_title)
             await self.send_pages()
 
     async def send_group_help(self, group: commands.Group):

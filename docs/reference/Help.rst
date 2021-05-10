@@ -21,6 +21,8 @@ The help menu class.
     :param int char_limit: Set the character limit for the paginator, defaults to ``6000``.
     :param int field_limit: Set the page field limit for each page of the menu, defaults to ``15``.
     :param bool show_cooldown: Show/hide the cooldown field in command help menu's, defaults to ``True``.
+    :param bool show_brief: Show/hide the brief field in command help menu's, defaults to ``False``.
+    :param bool show_info_title: Changes the command description box in command help menu's to have an "Info:" title above it to match other fields, defaults to ``False``. (**Note:** enabling this will limit command descriptions to 1024 characters due to Discord API limitations)
     :param bool dm_help: DM the help menu to the author instead of show it in their channel.
     :param bool dm_help_notification: Show a message in the help request channel if ``dm_help`` is ``True``.
     :param str dm_help_message: The message to show in the DM notification, defaults to ``{0} Please check your DMs for help.``. (**Note:** Using ``{0}`` refers to the author type, for example putting ``{0.display_name}`` will show the users display name.)

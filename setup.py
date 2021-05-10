@@ -5,7 +5,7 @@ with open("README.md") as README:
 
 setup(
     name='discord-better-help',
-    version='1.1.0',
+    version='1.1.1',
     description='An extension module for discord.py to make setting up a help command easier.',
     license='MIT',
     long_description=long_description,

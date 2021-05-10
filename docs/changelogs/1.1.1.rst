@@ -1,0 +1,10 @@
+Version 1.1.1
+-------------
+
+
+Additions:
+==========
+
+* ``show_brief`` argument on :py:class:`Help()` class that can now allow you to toggle the brief field.
+* ``show_info_title`` argument on :py:class:`Help()` class that will convert the command description box into a field type that will include a "Info:" title to match the rest of the help menu.
+    * **Note:** enabling this will limit command description description boxes to 1024 characters due to Embed limitations on the Discord API.

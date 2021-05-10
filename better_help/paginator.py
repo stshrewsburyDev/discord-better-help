@@ -74,9 +74,17 @@ class Paginator:
             return "global"
         return bucket.name
 
-    def add_command(self, command: commands.Command, signature: str, show_cooldown: bool):
+    def add_command(self, command: commands.Command, signature: str, show_cooldown: bool, show_brief: bool, show_info_title: bool):
+        info = self._get_command_info(command)
+
         page = self._new_page(f"Help: {command.qualified_name}",
-                              f"{self.prefix}{self._get_command_info(command)}{self.suffix}" or "")
+                              f"{self.prefix}{info}{self.suffix}" if info and not show_info_title else "")
+
+        if show_info_title and info:
+            page.add_field(name="Info:", inline=False, value=f"{self.prefix}{info}{self.suffix}")
+
+        if command.brief and show_brief:
+            page.add_field(name="Brief:", inline=False, value=f"{self.prefix}{command.brief}{self.suffix}")
 
         page.add_field(name="Usage:", inline=False, value=f"{self.prefix}{signature}{self.suffix}")
 
