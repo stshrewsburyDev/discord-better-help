@@ -34,7 +34,7 @@ Based off of `discord-pretty-help <https://pypi.org/project/discord-pretty-help/
 Overview
 --------
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 2
 
    reference/index.rst
    changelogs/index.rst
@@ -77,4 +77,4 @@ Some useful links
 License
 -------
 
-The project is licensed under the MIT license.
+The project is licensed under the `MIT license <https://mit-license.org/>`_. (`learn more <https://en.wikipedia.org/wiki/MIT_License>`_)

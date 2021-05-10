@@ -74,7 +74,7 @@ class Paginator:
             return "global"
         return bucket.name
 
-    def add_command(self, command: commands.Command, signature: str):
+    def add_command(self, command: commands.Command, signature: str, show_cooldown: bool):
         page = self._new_page(f"Help: {command.qualified_name}",
                               f"{self.prefix}{self._get_command_info(command)}{self.suffix}" or "")
 
@@ -84,10 +84,11 @@ class Paginator:
             page.add_field(name="Aliases:", inline=True,
                            value=f"{self.prefix}\n{self._get_command_aliases(command)}{self.suffix}")
 
-        if command._buckets._cooldown:
+        if command._buckets._cooldown and show_cooldown:
             cooldown = command._buckets._cooldown
+            per = round(cooldown.per) if round(cooldown.per) == cooldown.per else cooldown.per
             page.add_field(name="Cooldown:", inline=True,
-                           value=f"{self.prefix}{cooldown.per} second {self._format_cooldown(cooldown.type)}{self.suffix}")
+                           value=f"{self.prefix}{per} second{'s' if cooldown.per > 1 else ''} ({self._format_cooldown(cooldown.type).title()}){self.suffix}")
 
         self._add_page(page)
 

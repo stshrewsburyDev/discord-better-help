@@ -13,7 +13,7 @@ An extension module for [discord.py](https://pypi.org/project/discord.py/ "disco
 Notices:
 -------
 * This module was based off of [discord-pretty-help](https://pypi.org/project/discord-pretty-help/ "discord-pretty-help PyPi page") by [StroupBSlayen](https://pypi.org/user/StroupBSlayen/ "StroupBSlayen PyPi profile").
-* This module was designed for [discord.py](https://pypi.org/project/discord.py/ "discord.py PyPi page") 1.6+ but may work with older versions, use at your own risk however.
+* This module was designed for [discord.py](https://pypi.org/project/discord.py/ "discord.py PyPi page") 1.7+ but may work with older versions, use at your own risk however.
 
 Installation:
 -------------

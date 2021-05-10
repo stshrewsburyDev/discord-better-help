@@ -44,4 +44,4 @@ class Navigation:
         return self._dict.__iter__()
 
     def __repr__(self) -> str:
-        return f"<{self.__class__.__name__} pg_left:{self.pg_left} pg_right:{self.pg_right} cancel:{self.cancel} info:{self.info}>"
+        return f"<{self.__class__.__name__} pg_left:{self.pg_left} pg_right:{self.pg_right} cancel:{self.cancel}>"

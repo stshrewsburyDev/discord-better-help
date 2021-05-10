@@ -1,0 +1,27 @@
+Version 1.1.0
+-------------
+
+
+Changes:
+========
+
+* Changed cooldown field formatting to make it more user friendly. (`GitHub issue link <https://github.com/stshrewsburyDev/discord-better-help/issues/3>`_)
+    * Removed redundant decimals
+    * Pluralised "seconds" when required
+    * Capitalised cooldown type and put into brackets
+    * Example:
+        * Before: ``1.0 second channel`` ``30.0 second user`` ``2.5 second global``
+        * After: ``1 second (Channel)`` ``30 seconds (User)`` ``2.5 seconds (Global)``
+
+
+Additions:
+==========
+
+* ``show_cooldown`` argument on :py:class:`Help()` class that can now allow you to toggle the cooldown field.
+
+
+Bug Fixes:
+==========
+
+* Fixed bug where removed variable from :py:class:`Navigation()` would cause an ``AttributeError`` if called (`GitHub issue link <https://github.com/stshrewsburyDev/discord-better-help/issues/2>`_)
+* Fixed bug where using custom ending notes with ``ending_note`` wouldn't properly format the message with the prefix and command. (Refer to :py:class:`Help()`)

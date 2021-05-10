@@ -5,3 +5,4 @@ Reference
   :maxdepth: 2
 
   Help
+  Navigation
