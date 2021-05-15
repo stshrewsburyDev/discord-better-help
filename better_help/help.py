@@ -82,6 +82,10 @@ class Help(HelpCommand):
         pages = self.paginator.pages
         total_pages = len(pages)
 
+        # If somehow nothing was found, send nothing instead of calling an IndexError
+        if not pages:
+            return
+
         if self.dm_help_notification and self.dm_help:
             try:
                 await self.context.channel.send(embed=discord.Embed(description=self.dm_help_message.format(self.context.author)))
@@ -195,11 +199,9 @@ class Help(HelpCommand):
         await self.send_pages()
 
     async def send_command_help(self, command: commands.Command):
-        filtered = await self.filter_commands([command])
-        if filtered:
-            self.paginator.add_command(command, self.get_command_signature(command),
-                                       show_cooldown=self.show_cooldown, show_brief=self.show_brief, show_info_title=self.show_info_title)
-            await self.send_pages()
+        self.paginator.add_command(command, self.get_command_signature(command),
+                                   show_cooldown=self.show_cooldown, show_brief=self.show_brief, show_info_title=self.show_info_title)
+        await self.send_pages()
 
     async def send_group_help(self, group: commands.Group):
         filtered = await self.filter_commands(group.commands, sort=self.sort_commands)
@@ -210,3 +212,7 @@ class Help(HelpCommand):
         filtered = await self.filter_commands(cog.get_commands(), sort=self.sort_commands)
         self.paginator.add_cog(cog, filtered)
         await self.send_pages()
+
+    async def send_error_message(self, error):
+        destination = self.get_destination()
+        await destination.send(embed=discord.Embed(description=error, colour=self.colour))

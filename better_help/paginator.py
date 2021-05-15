@@ -127,7 +127,7 @@ class Paginator:
 
     def add_index(self, include: bool, title: str, bot: commands.Bot):
         if include:
-            index = self._new_page(title, bot.description or self.no_info)
+            index = self._new_page(title, bot.description)
 
             if self.index_show_categories:
                 for page_no, page in enumerate(self._pages, 2):

@@ -1,0 +1,16 @@
+Version 1.2.0
+-------------
+
+
+Changes:
+========
+
+* Help command errors will now send in an embed message that matches the style of the help menu.
+
+
+Bug Fixes:
+==========
+
+* Hidden commands can now be fetched via ``help COMMAND`` even if ``show_hidden`` is set to ``False``. (`GitHub issue link <https://github.com/stshrewsburyDev/discord-better-help/issues/6>`_)
+    * Same fix applies to group commands.
+* Main index page will no longer show ``No information provided`` tag if no bot description was defined. (`GitHub issue link <https://github.com/stshrewsburyDev/discord-better-help/issues/5>`_)

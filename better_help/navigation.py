@@ -9,6 +9,8 @@ class Navigation:
         self.pg_right = self.__get_match(pg_right)
         self.cancel = self.__get_match(cancel)
 
+        self.info_enabled = False
+
     @property
     def _dict(self) -> dict:
         return {

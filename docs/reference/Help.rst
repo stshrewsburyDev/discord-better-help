@@ -46,4 +46,3 @@ Example:
     from better_help import Help
 
     bot = commands.Bot(command_prefix="!", help_command=Help())
-
