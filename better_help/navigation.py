@@ -4,19 +4,21 @@ from re import search
 
 
 class Navigation:
-    def __init__(self, pg_left="◀", pg_right="▶", cancel="⏹"):
+    def __init__(self, pg_left="◀", pg_right="▶", cancel="⏹", start="⏮", end="⏭"):
         self.pg_left = self.__get_match(pg_left)
         self.pg_right = self.__get_match(pg_right)
         self.cancel = self.__get_match(cancel)
-
-        self.info_enabled = False
+        self.start = self.__get_match(start)
+        self.end = self.__get_match(end)
 
     @property
     def _dict(self) -> dict:
         return {
+            self.start: -2,
             self.pg_left: -1,
-            self.pg_right: 1,
             self.cancel: 0,
+            self.pg_right: 1,
+            self.end: 2,
         }
 
     @staticmethod
@@ -46,4 +48,4 @@ class Navigation:
         return self._dict.__iter__()
 
     def __repr__(self) -> str:
-        return f"<{self.__class__.__name__} pg_left:{self.pg_left} pg_right:{self.pg_right} cancel:{self.cancel}>"
+        return f"<{self.__class__.__name__} pg_left:{self.pg_left} pg_right:{self.pg_right} cancel:{self.cancel} start:{self.start} end:{self.end}>"

@@ -1,0 +1,9 @@
+Version 1.3.0
+-------------
+
+
+Changes:
+========
+
+* Moved close button to center of help menu reactions to make things look neater
+* Added skip to front/end of paginator options to help menu (`GitHub issue link <https://github.com/stshrewsburyDev/discord-better-help/issues/8>`_)

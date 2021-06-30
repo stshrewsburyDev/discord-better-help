@@ -139,7 +139,13 @@ class Help(HelpCommand):
 
                             return
                         else:
-                            index += nav
+                            if nav == -2:
+                                index = 0
+                            elif nav == 2:
+                                index = total_pages - 1
+                            else:
+                                index += nav
+
                             embed: discord.Embed = pages[index % total_pages]
 
                             await message.edit(embed=embed)

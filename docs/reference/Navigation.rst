@@ -20,7 +20,7 @@ Example:
 Navigation class:
 -----------------
 
-.. py:class:: Navigation(pg_left="◀", pg_right="▶", cancel="⏹")
+.. py:class:: Navigation(pg_left="◀", pg_right="▶", cancel="⏹", start="⏮", end="⏭")
 
     Creates a navigation controls setting that can be used in the help menu.
 
@@ -38,3 +38,5 @@ Navigation class:
     :param str pg_left: The emoji used for the page back control of the help menu.
     :param str pg_right: The emoji used for the page forward control of the help menu.
     :param str cancel: The emoji used for the cancel control of the help menu.
+    :param str start: The emoji used for the skip to front control of the help menu.
+    :param str end: The emoji used for the skip to end control of the help menu.
